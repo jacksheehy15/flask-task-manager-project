@@ -7,17 +7,31 @@
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="category_name" name="category_name" class="validate">
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Task Category</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
                 <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                <input id="task_name" name="task_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                <input id="task_name" name="task_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
                 <label for="task_name">Task Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                <textarea id="task_description" name="task_description" minlength="5"
-                maxlength="200" class="materialize-textarea validate"></textarea>
-          <label for="task_description">Task Description</label>
+                <textarea id="task_description" name="task_description" minlength="5" maxlength="200"
+                    class="materialize-textarea validate"></textarea>
+                <label for="task_description">Task Description</label>
             </div>
         </div>
         <div class="row">
@@ -39,7 +53,7 @@
                 </div>
             </div>
         </div>
-        </form>
-        </div>
+    </form>
+</div>
 
 {%  endblock %}
